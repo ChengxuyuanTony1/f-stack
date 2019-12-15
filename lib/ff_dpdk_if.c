@@ -891,7 +891,6 @@ ff_veth_input(const struct ff_dpdk_if_context *ctx, struct rte_mbuf *pkt)
         void *mb = ff_mbuf_get(prev, data, len);
         if (mb == NULL) {
             ff_mbuf_free(hdr);
-            rte_pktmbuf_free(pkt);
             return;
         }
         pn = pn->next;
